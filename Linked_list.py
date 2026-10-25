@@ -33,16 +33,12 @@ class LinkedList:
                 return
             prev.next=temp.next
             temp=None
-      
-
     def print(self):
         temp = self.head
 
         while temp:
             print(temp.data)
             temp = temp.next
-
-
 list = LinkedList()
 
 n1 = Node(10)
