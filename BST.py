@@ -27,6 +27,22 @@ class BST:
                         return
                     else:
                         temp=temp.right
+
+    def level_order(self,rt):
+        if rt is None:
+            print("BST IS EMPTY")
+        arr=[]
+        cnt=0
+        arr.append(rt)
+        while cnt<len(arr):
+            temp=arr[cnt]
+            cnt+=1
+            print(temp.data,end=" ")
+            if temp.left:
+                arr.append(temp.left)
+            if temp.right:
+                arr.append(temp.right)  
+    
     # deletion
     def del_node(self, rt, value):
         if rt is None:
@@ -115,5 +131,11 @@ b1.inorder(b1.root)
 #b1.postorder(b1.root)
 #b1.findminmax()
 b1.del_node(b1.root, 4)
-print("\nInorder after deletion: ", end=" ")
+print("\nInorder ;after deletion: ", end=" ")
 b1.inorder(b1.root)
+if b1.search(450):
+    print("\n Node Found")
+else:
+    print("\n Node not found")
+print("\nLevel Order:")
+b1.level_order(b1.root)
