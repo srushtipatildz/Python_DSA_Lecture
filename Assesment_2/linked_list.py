@@ -40,6 +40,15 @@ class LinkedList():
             print("empty")
         else:
             self.head=self.head.next
+# Search:
+    def search(self,value):
+        temp=self.head
+        while temp is not None:
+            if temp.data==value:
+                print("element found")
+                return
+            temp=temp.next
+        print("element not found")
 l1=LinkedList()
 l1.insert_beg(90)
 l1.insert_beg(100)
@@ -47,6 +56,8 @@ l1.insert_beg(110)
 l1.insert_end(600)
 
 l1.del_first_node()
-l1.display()
+
+l1.search(900)
+l1.display() 
 
     
